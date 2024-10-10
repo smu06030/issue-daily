@@ -1,11 +1,5 @@
-import React from "react";
+const MainPage = () => {
+  return <div>MainPage</div>;
+};
 
-export default function Home() {
-  return (
-    <div className="font-pretendard">
-      <div className="font-thin">dsfsdf</div>
-      <div className="font-bold">dsfsdf</div>
-      <div className="font-medium">dsfsdf</div>
-    </div>
-  );
-}
+export default MainPage;
