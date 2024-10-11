@@ -3,9 +3,11 @@
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import InputField from '../../../components/common/InputFeild/InputField';
-import LoginButton from '../../../components/common/Button/LoginButton';
+import browserClient from '@/utils/supabase/client';
+import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -14,14 +16,24 @@ const LoginPage = () => {
     mode: 'onSubmit'
   });
 
-  const onSubmit = (userInfo: FieldValues) => {
-    console.log(userInfo);
+  const onSubmit = async (userInfo: FieldValues) => {
+    const { data } = await browserClient.auth.signInWithPassword({
+      email: userInfo.email,
+      password: userInfo.password
+    });
+
+    if (!data.user) {
+      alert('아이디와 비밀번호를 다시 입력해주세요.');
+    } else {
+      router.push('/');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <InputField
+          name="email"
           type="email"
           placeholder="이메일를 입력해 주세요."
           registerOptions={register('email', {
@@ -30,6 +42,7 @@ const LoginPage = () => {
           errors={errors}
         />
         <InputField
+          name="password"
           type="password"
           placeholder="비밀번호를 입력해 주세요."
           registerOptions={register('password', {
@@ -38,7 +51,12 @@ const LoginPage = () => {
           errors={errors}
         />
       </div>
-      <LoginButton />
+      <button
+        type="submit"
+        className="w-[348px] h-[50px] mt-9 shadow-buttonShadow bg-black rounded-md text-white font-bold hover:bg-zinc-800"
+      >
+        로그인
+      </button>
     </form>
   );
 };

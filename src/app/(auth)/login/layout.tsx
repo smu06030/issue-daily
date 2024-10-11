@@ -2,6 +2,12 @@ import Link from 'next/link';
 import React from 'react';
 import GoogleButton from './../../../components/common/Button/GoogleButton';
 import KakaoButton from '../../../components/common/Button/KakaoButton';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '로그인 페이지',
+  description: '로그인 페이지 입니다.'
+};
 
 const LoginLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -13,7 +19,9 @@ const LoginLayout = ({ children }: { children: React.ReactNode }) => {
       </Link>
       <GoogleButton />
       <KakaoButton />
-      <Link href={'/signup'} className='text-sm mt-12 font-bold hover:underline'>회원가입 &gt;</Link>
+      <Link href={'/signup'} className="text-sm mt-12 font-bold hover:underline">
+        회원가입 &gt;
+      </Link>
     </section>
   );
 };
