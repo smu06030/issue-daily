@@ -17,16 +17,23 @@ const LoginPage = () => {
   });
 
   const onSubmit = async (userInfo: FieldValues) => {
-    const { data } = await browserClient.auth.signInWithPassword({
-      email: userInfo.email,
-      password: userInfo.password
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        ...userInfo
+      })
     });
+    const { user } = await res.json();
 
-    if (!data.user) {
+    if (!user) {
       alert('아이디와 비밀번호를 다시 입력해주세요.');
-    } else {
-      router.push('/');
+      return;
     }
+
+    router.push('/');
   };
 
   return (

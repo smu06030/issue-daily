@@ -1,9 +1,15 @@
 import { createClient } from '@/utils/supabase/server';
+import { combineChunks } from '@supabase/ssr';
 import React from 'react';
 
-export default function Home() {
-  const serverClient = createClient();
-  console.log(serverClient.auth.getUser())
+export default async function Home() {
+  // const serverClient = createClient();
+  // const {
+  //   data: { user }
+  // } = await serverClient.auth.getUser();
+
+  // console.log(user)
+
   return (
     <div className="font-pretendard">
       <div className="font-thin">dsfsdf</div>

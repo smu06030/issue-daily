@@ -17,19 +17,20 @@ const SignUpPage = () => {
     mode: 'onChange'
   });
 
-
   const onSubmit = async (userInfo: FieldValues) => {
-    const { data, error } = await browserClient.auth.signUp({
-      email: userInfo.email,
-      password: userInfo.password,
-      options: {
-        data: {
-          user_name: userInfo.nickname,
-        }
-      }
+    const res = await fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        ...userInfo
+      })
     });
 
-    if (error?.message === "User already registered") {
+    const { user, error } = await res.json();
+
+    if (error) {
       alert("이미 존재하는 아이디입니다.");
       return;
     }
