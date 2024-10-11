@@ -1,5 +1,7 @@
-const MainPage = () => {
-  return <div>MainPage</div>;
+import TopNewsList from '@/components/mainPage/TopNewsList';
+
+const MainPage = async () => {
+  return <TopNewsList />;
 };
 
 export default MainPage;
