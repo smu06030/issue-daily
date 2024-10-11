@@ -15,9 +15,9 @@ const TopNewsCard = ({ post }: { post: NewsResultsType }) => {
           className="w-full h-full"
         />
       </div>
-      <div className="w-[50%]">
-        <p className="text-[32px] font-bold mb-5">{post.title}</p>
-        <p>{post.description}</p>
+      <div className="w-[50%] mx-5">
+        <p className="text-[32px] font-bold mb-5 break-keep">{post.title}</p>
+        <p className="break-keep text-ellipsis ">{post.description}</p>
       </div>
     </Link>
   );
