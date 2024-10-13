@@ -55,9 +55,6 @@ const TopNewsList = () => {
           다음
         </button>
       </div>
-      <div>
-        <p className="text-[40px] m-5 font-black">News List</p>
-      </div>
     </div>
   );
 };
