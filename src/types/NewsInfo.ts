@@ -2,6 +2,7 @@ export type NewsInfoType = {
   status: string;
   totalResults: number;
   results: NewsResultsType[];
+  nextPage: string;
 };
 
 export type NewsResultsType = {
