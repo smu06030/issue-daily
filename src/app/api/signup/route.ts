@@ -19,8 +19,8 @@ export const POST = async (request: Request) => {
   });
 
   if (error) {
-    return NextResponse.json({ user: null, error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ user });
+  return NextResponse.json({ message: '회원가입을 성공했습니다.' });
 };

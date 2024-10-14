@@ -26,14 +26,13 @@ const SignUpPage = () => {
         ...userInfo
       })
     });
-
-    const { user, error } = await res.json();
-
+    const { message, error } = await res.json();
+    
     if (error) {
       alert('이미 존재하는 아이디입니다.');
       return;
     }
-
+    alert(message)
     router.push('/login');
   };
 

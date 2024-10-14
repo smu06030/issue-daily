@@ -8,6 +8,10 @@ const GoogleButton = () => {
     await browserClient.auth.signInWithOAuth({
       provider: 'google',
       options: {
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
         redirectTo: window.origin + '/auth/callback'
       }
     });

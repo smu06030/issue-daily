@@ -8,6 +8,9 @@ const KakaoButton = () => {
     await browserClient.auth.signInWithOAuth({
       provider: 'kakao',
       options: {
+        queryParams: {
+          prompt: 'select_account',
+        },
         redirectTo: window.origin + '/auth/callback'
       }
     });
