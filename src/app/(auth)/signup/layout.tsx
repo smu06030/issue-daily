@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 const SignUpLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="font-pretendard flex justify-center items-center flex-col">
-      <div className="text-2xl font-bold mb-5">회원가입</div>
+    <section className="flex flex-col items-center justify-center font-pretendard">
+      <div className="mb-5 text-2xl font-bold">회원가입</div>
       {children}
     </section>
   );

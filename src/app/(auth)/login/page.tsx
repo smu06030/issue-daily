@@ -3,7 +3,6 @@
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import InputField from '../../../components/common/InputFeild/InputField';
-import browserClient from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
@@ -15,7 +14,7 @@ const LoginPage = () => {
   } = useForm({
     mode: 'onSubmit'
   });
-
+ 
   const onSubmit = async (userInfo: FieldValues) => {
     const res = await fetch('/api/login', {
       method: 'POST',
