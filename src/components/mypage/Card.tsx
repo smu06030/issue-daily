@@ -1,8 +1,14 @@
+import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Card = () => {
+  // const { data, isLoading, error } = useQuery({
+  //   queryKey: ['likes', userId]
+  // });
   return (
+    // <Link href={}>
     <div>
       <div className="w-[200px] h-[130px] overflow-hidden relative rounded-lg">
         <Image
@@ -17,6 +23,7 @@ const Card = () => {
       <p>title</p>
       <p>작성시간|작성자</p>
     </div>
+    // </Link>
   );
 };
 

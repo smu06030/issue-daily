@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import React from 'react';
 import Providers from './providers';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const pretendard = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -23,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pretendard.variable} antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <ReactQueryDevtools />
+          {children}
+        </Providers>
       </body>
     </html>
   );
