@@ -1,7 +1,6 @@
 'use client';
 
 import InputField from '@/components/common/InputFeild/InputField';
-import browserClient from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
@@ -27,15 +26,14 @@ const SignUpPage = () => {
         ...userInfo
       })
     });
-
-    const { user, error } = await res.json();
-
+    const { message, error } = await res.json();
+    
     if (error) {
-      alert("이미 존재하는 아이디입니다.");
+      alert('이미 존재하는 아이디입니다.');
       return;
     }
-
-    router.push('/login')
+    alert(message)
+    router.push('/login');
   };
 
   return (
@@ -96,7 +94,7 @@ const SignUpPage = () => {
       </div>
       <button
         type="submit"
-        className="w-[348px] h-[50px] my-9 shadow-buttonShadow bg-black rounded-md text-white font-bold hover:bg-zinc-800"
+        className="my-9 h-[50px] w-[348px] rounded-md bg-black font-bold text-white shadow-buttonShadow hover:bg-zinc-800"
       >
         회원가입
       </button>
