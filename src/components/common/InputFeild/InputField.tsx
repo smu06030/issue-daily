@@ -1,5 +1,5 @@
 import React from 'react';
-import { FieldError } from 'react-hook-form';
+import { FieldErrors, FieldValues } from 'react-hook-form';
 
 type InputFieldProps = {
   name: string;
@@ -7,9 +7,7 @@ type InputFieldProps = {
   label?: string;
   placeholder: string;
   registerOptions: object;
-  errors: {
-    [key: string]: FieldError | undefined;
-  };
+  errors: FieldErrors<FieldValues>;
 };
 
 const InputField = ({ name, type, label, placeholder, registerOptions, errors }: InputFieldProps) => {
@@ -26,7 +24,9 @@ const InputField = ({ name, type, label, placeholder, registerOptions, errors }:
         placeholder={placeholder}
         {...registerOptions}
       />
-      {errors[name]?.message && <span className="mb-3 text-red-500">{errors[name].message}</span>}
+      {errors[name]?.message && typeof errors[name]?.message === 'string' && (
+        <span className="mb-3 text-red-500">{errors[name].message}</span>
+      )}
     </div>
   );
 };

@@ -1,24 +1,12 @@
-'use client';
+import CategoryNewsList from '@/components/mainPage/CategoryNewsList';
+import TopNewsList from '@/components/mainPage/TopNewsList';
 
-export default function Home() {
-  const logout = async () => {
-    const res = await fetch('/api/logout', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    const { message } = await res.json();
-    console.log(message);
-  };
-
+const MainPage = async () => {
   return (
-    <div className="font-pretendard">
-      <div className="font-thin" onClick={async () => await logout()}>
-        dsfsdf
-      </div>
-      <div className="font-bold">dsfsdf</div>
-      <div className="font-medium">dsfsdf</div>
-    </div>
+    <>
+      <TopNewsList />
+      <CategoryNewsList />
+    </>
   );
-}
+};
+export default MainPage;

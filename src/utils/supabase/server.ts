@@ -14,8 +14,20 @@ export const createClient = () => {
           cookiesToSet.forEach(({ name, value, options }) => {
             cookieStore.set(name, value, options);
           });
-        } catch (error) {}
+        } catch (error) {
+          console.log('error: ', error);
+        }
       }
     }
   });
 };
+
+export const getIsLogin = async () => {
+  const serverClient = createClient();
+  const {
+    data: { session }
+  } = await serverClient.auth.getSession();
+  return !!session;
+};
+
+

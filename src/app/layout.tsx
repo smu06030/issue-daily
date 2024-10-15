@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import React from 'react';
+import Header from '@/components/layout/Header';
 import Providers from './providers';
 
 const pretendard = localFont({
@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pretendard.variable} antialiased`}>
+        <Header />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -5,10 +5,7 @@ export const POST = async (request: Request) => {
   const userInfo = await request.json();
   const serverClient = createClient();
 
-  const {
-    data: { user },
-    error
-  } = await serverClient.auth.signUp({
+  const { error } = await serverClient.auth.signUp({
     email: userInfo.email,
     password: userInfo.password,
     options: {

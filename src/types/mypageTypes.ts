@@ -33,4 +33,7 @@ export interface CommentsInfo {
   article_id: string;
   isLiked: boolean;
   created_at: string;
+  image_url: string;
+  source_name: string;
+  pubDate: string;
 }
