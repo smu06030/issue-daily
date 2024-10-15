@@ -1,4 +1,4 @@
-import { CommentData } from '@/types/Comment';
+import { CommentData } from '@/types/comment';
 import React from 'react';
 
 type CommentProps = {
@@ -9,13 +9,13 @@ type CommentProps = {
 
 const Comment = ({ comment, ifEditing, setEditingMessage }: CommentProps) => {
   return (
-    <div className="flex gap-5 w-[calc(100%-72px)]">
-      <figure className="rounded-full bg-gray-400 w-[50px] h-[50px]"></figure>
-      <div className="flex flex-col justify-center w-[calc(100%-150px)] gap-[2px] relative">
+    <div className="flex w-[calc(100%-72px)] gap-5">
+      <figure className="h-[50px] w-[50px] rounded-full bg-gray-400"></figure>
+      <div className="relative flex w-[calc(100%-150px)] flex-col justify-center gap-[2px]">
         <h3 className="text-[0.75rem]">{comment.user_id}</h3>
         {ifEditing ? (
           <textarea
-            className="text-[0.875rem] w-full resize-none border-2 rounded-md border-gray-400"
+            className="w-full resize-none rounded-md border-2 border-gray-400 text-[0.875rem]"
             onChange={(e) => setEditingMessage?.(e.target.value)}
             autoFocus
           >
