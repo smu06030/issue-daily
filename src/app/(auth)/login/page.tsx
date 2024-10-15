@@ -14,7 +14,7 @@ const LoginPage = () => {
   } = useForm({
     mode: 'onSubmit'
   });
- 
+
   const onSubmit = async (userInfo: FieldValues) => {
     const res = await fetch('/api/login', {
       method: 'POST',
@@ -59,7 +59,7 @@ const LoginPage = () => {
       </div>
       <button
         type="submit"
-        className="w-[348px] h-[50px] mt-9 shadow-buttonShadow bg-black rounded-md text-white font-bold hover:bg-zinc-800"
+        className="mt-9 h-[50px] w-[348px] rounded-md bg-black font-bold text-white shadow-buttonShadow hover:bg-zinc-800"
       >
         로그인
       </button>

@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@supabase-cache-helpers/postgrest-react-query':
-        specifier: ^1.10.1
-        version: 1.10.1(@supabase/postgrest-js@1.16.1)(@supabase/supabase-js@2.45.4)(@tanstack/react-query@5.59.8(react@18.3.1))(react@18.3.1)
       '@supabase/ssr':
         specifier: ^0.5.1
         version: 0.5.1(@supabase/supabase-js@2.45.4)
@@ -20,12 +17,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.59.8
         version: 5.59.8(react@18.3.1)
-      '@tanstack/react-query-devtools':
-        specifier: ^5.59.13
-        version: 5.59.13(@tanstack/react-query@5.59.8(react@18.3.1))(react@18.3.1)
       issue-daily-app:
         specifier: 'file:'
-        version: file:(@supabase/postgrest-js@1.16.1)(@types/react@18.3.11)
+        version: file:(@types/react@18.3.11)
       next:
         specifier: 14.2.15
         version: 14.2.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -70,7 +64,7 @@ importers:
         specifier: ^3.4.1
         version: 3.4.13
       typescript:
-        specifier: ^5
+        specifier: ^5.6.3
         version: 5.6.3
 
 packages:
@@ -78,10 +72,6 @@ packages:
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
-
-  '@babel/runtime-corejs3@7.25.7':
-    resolution: {integrity: sha512-gMmIEhg35sXk9Te5qbGp3W9YKrvLt3HV658/d3odWrHSqT0JeG5OzsJWFHRLiOohRyjRsJc/x03DhJm3i8VJxg==}
-    engines: {node: '>=6.9.0'}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -241,19 +231,6 @@ packages:
   '@rushstack/eslint-patch@1.10.4':
     resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
-  '@supabase-cache-helpers/postgrest-core@0.8.1':
-    resolution: {integrity: sha512-WlmpQBBui54jQPQ9CwE7rdDcdPcMQLRl37aRJ+AEpEm47HMn0lJ/0cTuC8BT0aBMHK8BgOSx0dZ1QjgND1sB6g==}
-    peerDependencies:
-      '@supabase/postgrest-js': ^1.9.0
-      '@supabase/supabase-js': ^2.0.0
-
-  '@supabase-cache-helpers/postgrest-react-query@1.10.1':
-    resolution: {integrity: sha512-BGGrEKue6mSH0el1iO1+iOSuyGqQxsHQ2B8dXWlDvYGmU7rmw5AGqXqDWngMBX68LcoHVJEogdbXP0pH4+1Tuw==}
-    peerDependencies:
-      '@supabase/postgrest-js': ^1.9.0
-      '@tanstack/react-query': ^4.0.0 || ^5.0.0
-      react: ^16.11.0 || ^17.0.0 || ^18.0.0
-
   '@supabase/auth-js@2.65.0':
     resolution: {integrity: sha512-+wboHfZufAE2Y612OsKeVP4rVOeGZzzMLD/Ac3HrTQkkY4qXNjI6Af9gtmxwccE5nFvTiF114FEbIQ1hRq5uUw==}
 
@@ -289,15 +266,6 @@ packages:
 
   '@tanstack/query-core@5.59.6':
     resolution: {integrity: sha512-g58YTHe4ClRrjJ50GY9fas/0zARJVozY0Hs+hcSBOmwZaeKY+to0/LX8wKnnH/EJiLYcC1sHmE11CAS3ncfZBg==}
-
-  '@tanstack/query-devtools@5.58.0':
-    resolution: {integrity: sha512-iFdQEFXaYYxqgrv63ots+65FGI+tNp5ZS5PdMU1DWisxk3fez5HG3FyVlbUva+RdYS5hSLbxZ9aw3yEs97GNTw==}
-
-  '@tanstack/react-query-devtools@5.59.13':
-    resolution: {integrity: sha512-6RW9jjJPeIUxu/rAy7W2a4cCOFp46Tv2LY2pOS4m5s8vqOSvI8dkizvOq+GmLGtI2E+QjoeZbEOGKDSmqDynWg==}
-    peerDependencies:
-      '@tanstack/react-query': ^5.59.13
-      react: ^18 || ^19
 
   '@tanstack/react-query@5.59.8':
     resolution: {integrity: sha512-jkvObpbjBL6P/PHFIjvNGG19XyhI8sjP6/Mw7CbmgT6SAps/5fZY5pxDicRwAt1YGCiEQvwrJQ6IdbZ8j5CVfw==}
@@ -545,9 +513,6 @@ packages:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
-  core-js-pure@3.38.1:
-    resolution: {integrity: sha512-BY8Etc1FZqdw1glX0XNOq2FDwfrg/VGqoZOZCdaL+UmdaqDwQwYXkMJT4t6In+zfEfOJDcM9T0KdbBeJg8KKCQ==}
-
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -787,10 +752,6 @@ packages:
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
-  fast-equals@5.0.1:
-    resolution: {integrity: sha512-WF1Wi8PwwSY7/6Kx0vKXtw8RwuSGoM1bvDaJbu7MxDlR1vovZjIAKrnzyrThgAjm6JDTu0fVgWXDlMGspodfoQ==}
-    engines: {node: '>=6.0.0'}
-
   fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
@@ -819,11 +780,6 @@ packages:
   flat-cache@4.0.1:
     resolution: {integrity: sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw==}
     engines: {node: '>=16'}
-
-  flat@6.0.1:
-    resolution: {integrity: sha512-/3FfIa8mbrg3xE7+wAhWeV+bd7L2Mof+xtZb5dRDKZ+wDvYJK4WDYeIOuOhre5Yv5aQObZrlbRmk3RTSiuQBtw==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
@@ -1049,10 +1005,6 @@ packages:
     resolution: {integrity: sha512-LvIm3/KWzS9oRFHugab7d+M/GcBXuXX5xZkzPmN+NxihdQlZUQ4dWuSV1xR/sq6upL1TJEDrfBgRepHFdBtSNQ==}
     engines: {node: '>= 0.4'}
 
-  is-what@4.1.16:
-    resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
-    engines: {node: '>=12.13'}
-
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
@@ -1139,10 +1091,6 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-
-  merge-anything@5.1.7:
-    resolution: {integrity: sha512-eRtbOb1N5iyH0tkQDAoQ4Ipsp/5qSR79Dzrz8hEPxRX10RWWR/iQXdoKmBSRCThY1Fh5EhISDtpSc93fpxUniQ==}
-    engines: {node: '>=12.13'}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -1443,9 +1391,6 @@ packages:
     resolution: {integrity: sha512-fmfw4XgoDke3kdI6h4xcUz1dG8uaiv5q9gcEwLS4Pnth2kxT+GZ7YehS1JTMGBQmtV7Y4GFGbs2re2NqhdozUg==}
     engines: {node: '>= 0.4'}
 
-  regenerator-runtime@0.14.1:
-    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-
   regexp.prototype.flags@1.5.3:
     resolution: {integrity: sha512-vqlC04+RQoFalODCbCumG2xIOvapzVMHwsyIGM/SIE8fRhFFsXeH8/QQ+s0T0kDAhKc4k30s73/0ydkHQz6HlQ==}
     engines: {node: '>= 0.4'}
@@ -1727,9 +1672,6 @@ packages:
       utf-8-validate:
         optional: true
 
-  xregexp@5.1.1:
-    resolution: {integrity: sha512-fKXeVorD+CzWvFs7VBuKTYIW63YD1e1osxwQ8caZ6o1jg6pDAbABDG54LCIq0j5cy7PjRvGIq6sef9DYPXpncg==}
-
   yaml@2.5.1:
     resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
@@ -1760,11 +1702,6 @@ packages:
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
-
-  '@babel/runtime-corejs3@7.25.7':
-    dependencies:
-      core-js-pure: 3.38.1
-      regenerator-runtime: 0.14.1
 
   '@eslint-community/eslint-utils@4.4.0(eslint@9.12.0(jiti@1.21.6))':
     dependencies:
@@ -1896,25 +1833,6 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.4': {}
 
-  '@supabase-cache-helpers/postgrest-core@0.8.1(@supabase/postgrest-js@1.16.1)(@supabase/supabase-js@2.45.4)':
-    dependencies:
-      '@supabase/postgrest-js': 1.16.1
-      '@supabase/supabase-js': 2.45.4
-      fast-equals: 5.0.1
-      flat: 6.0.1
-      merge-anything: 5.1.7
-      xregexp: 5.1.1
-
-  '@supabase-cache-helpers/postgrest-react-query@1.10.1(@supabase/postgrest-js@1.16.1)(@supabase/supabase-js@2.45.4)(@tanstack/react-query@5.59.8(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@supabase-cache-helpers/postgrest-core': 0.8.1(@supabase/postgrest-js@1.16.1)(@supabase/supabase-js@2.45.4)
-      '@supabase/postgrest-js': 1.16.1
-      '@tanstack/react-query': 5.59.8(react@18.3.1)
-      flat: 6.0.1
-      react: 18.3.1
-    transitivePeerDependencies:
-      - '@supabase/supabase-js'
-
   '@supabase/auth-js@2.65.0':
     dependencies:
       '@supabase/node-fetch': 2.6.15
@@ -1970,14 +1888,6 @@ snapshots:
       tslib: 2.7.0
 
   '@tanstack/query-core@5.59.6': {}
-
-  '@tanstack/query-devtools@5.58.0': {}
-
-  '@tanstack/react-query-devtools@5.59.13(@tanstack/react-query@5.59.8(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@tanstack/query-devtools': 5.58.0
-      '@tanstack/react-query': 5.59.8(react@18.3.1)
-      react: 18.3.1
 
   '@tanstack/react-query@5.59.8(react@18.3.1)':
     dependencies:
@@ -2270,8 +2180,6 @@ snapshots:
   concat-map@0.0.1: {}
 
   cookie@0.6.0: {}
-
-  core-js-pure@3.38.1: {}
 
   cross-spawn@7.0.3:
     dependencies:
@@ -2675,8 +2583,6 @@ snapshots:
 
   fast-deep-equal@3.1.3: {}
 
-  fast-equals@5.0.1: {}
-
   fast-glob@3.3.2:
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -2710,8 +2616,6 @@ snapshots:
     dependencies:
       flatted: 3.3.1
       keyv: 4.5.4
-
-  flat@6.0.1: {}
 
   flatted@3.3.1: {}
 
@@ -2936,15 +2840,12 @@ snapshots:
       call-bind: 1.0.7
       get-intrinsic: 1.2.4
 
-  is-what@4.1.16: {}
-
   isarray@2.0.5: {}
 
   isexe@2.0.0: {}
 
-  issue-daily-app@file:(@supabase/postgrest-js@1.16.1)(@types/react@18.3.11):
+  issue-daily-app@file:(@types/react@18.3.11):
     dependencies:
-      '@supabase-cache-helpers/postgrest-react-query': 1.10.1(@supabase/postgrest-js@1.16.1)(@supabase/supabase-js@2.45.4)(@tanstack/react-query@5.59.8(react@18.3.1))(react@18.3.1)
       '@supabase/ssr': 0.5.1(@supabase/supabase-js@2.45.4)
       '@supabase/supabase-js': 2.45.4
       '@tanstack/react-query': 5.59.8(react@18.3.1)
@@ -2957,7 +2858,6 @@ snapshots:
       - '@babel/core'
       - '@opentelemetry/api'
       - '@playwright/test'
-      - '@supabase/postgrest-js'
       - '@types/react'
       - babel-plugin-macros
       - bufferutil
@@ -3043,10 +2943,6 @@ snapshots:
       js-tokens: 4.0.0
 
   lru-cache@10.4.3: {}
-
-  merge-anything@5.1.7:
-    dependencies:
-      is-what: 4.1.16
 
   merge2@1.4.1: {}
 
@@ -3289,8 +3185,6 @@ snapshots:
       get-intrinsic: 1.2.4
       globalthis: 1.0.4
       which-builtin-type: 1.1.4
-
-  regenerator-runtime@0.14.1: {}
 
   regexp.prototype.flags@1.5.3:
     dependencies:
@@ -3647,10 +3541,6 @@ snapshots:
       strip-ansi: 7.1.0
 
   ws@8.18.0: {}
-
-  xregexp@5.1.1:
-    dependencies:
-      '@babel/runtime-corejs3': 7.25.7
 
   yaml@2.5.1: {}
 

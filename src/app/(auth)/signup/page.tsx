@@ -27,12 +27,12 @@ const SignUpPage = () => {
       })
     });
     const { message, error } = await res.json();
-    
+
     if (error) {
       alert('이미 존재하는 아이디입니다.');
       return;
     }
-    alert(message)
+    alert(message);
     router.push('/login');
   };
 
