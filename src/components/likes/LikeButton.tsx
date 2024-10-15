@@ -76,9 +76,14 @@ const LikeButton = ({ el }: { el: NewsResultsType }) => {
       alert('즐겨찾기에서 삭제되었습니다.');
       setIsLiked(false);
     } else {
-      const { error } = await browserClient
-        .from('likes')
-        .insert({ article_id: el.article_id, user_id: userId, isLiked: true });
+      const { error } = await browserClient.from('likes').insert({
+        article_id: el.article_id,
+        user_id: userId,
+        isLiked: true,
+        image_url: el.image_url,
+        source_name: el.source_name,
+        pubDate: el.pubDate
+      });
 
       if (error) {
         console.error('Error inserting like:', error);
@@ -98,7 +103,7 @@ const LikeButton = ({ el }: { el: NewsResultsType }) => {
       }}
       className="absolute bottom-0 right-0 text-[32px]"
     >
-      {isLiked ? <FaStar /> : <CiStar />}
+      {isLiked ? <FaStar className="text-yellow-300" /> : <CiStar className="text-yellow-300" />}
     </button>
   );
 };

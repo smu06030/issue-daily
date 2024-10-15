@@ -10,7 +10,6 @@ const CategoryNewsList = () => {
   const [categoryNews, setCategoryNews] = useState<NewsResultsType[]>([]);
   const [category, setCategory] = useState<string>('top');
   const [nextPage, setNextPage] = useState<string[]>([]);
-  console.log(nextPage, 'nextPage 확인');
 
   useEffect(() => {
     getCategoryNewsApi();
