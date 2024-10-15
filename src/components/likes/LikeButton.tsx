@@ -82,7 +82,8 @@ const LikeButton = ({ el }: { el: NewsResultsType }) => {
         isLiked: true,
         image_url: el.image_url,
         source_name: el.source_name,
-        pubDate: el.pubDate
+        pubDate: el.pubDate,
+        title: el.title
       });
 
       if (error) {
