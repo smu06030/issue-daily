@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import Modal from './Modal';
 import { UserProfile } from '@/types/mypageTypes';
-import { fetchUsers, getProfileByUserId } from '@/actions/profileActions';
+import { fetchUsers, getProfileByUserId } from '@/serverActions/profileActions';
 
 const Profile = () => {
   const [userId, setUserId] = useState<string | null>(null);

@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
-import { getLikesByUserId } from '@/actions/profileActions';
+import { getLikesByUserId } from '@/serverActions/profileActions';
 import { LikesInfo } from '@/types/mypageTypes';
 import Link from 'next/link';
 const url = 'http://localhost:3000';
