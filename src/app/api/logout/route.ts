@@ -6,5 +6,5 @@ export const DELETE = async () => {
 
   await serverClient.auth.signOut();
 
-  return NextResponse.json({ message: "로그아웃 했습니다." }, { status: 200 });
+  return NextResponse.json({ message: '로그아웃 했습니다.' }, { status: 200 });
 };

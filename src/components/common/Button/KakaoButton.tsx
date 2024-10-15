@@ -9,7 +9,7 @@ const KakaoButton = () => {
       provider: 'kakao',
       options: {
         queryParams: {
-          prompt: 'select_account',
+          prompt: 'select_account'
         },
         redirectTo: window.origin + '/auth/callback'
       }
