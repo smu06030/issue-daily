@@ -11,15 +11,15 @@ export const metadata: Metadata = {
 
 const LoginLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="font-pretendard flex justify-center items-center flex-col">
-      <div className="text-2xl font-bold mb-12">로그인</div>
+    <section className="flex flex-col items-center justify-center font-pretendard">
+      <div className="mb-12 text-2xl font-bold">로그인</div>
       {children}
-      <Link href={'/reset-password'} className="text-sm mt-3 mb-12 text-[#999] hover:underline">
+      <Link href={'/reset-password'} className="mb-12 mt-3 text-sm text-[#999] hover:underline">
         비밀번호 찾기
       </Link>
       <GoogleButton />
       <KakaoButton />
-      <Link href={'/signup'} className="text-sm mt-12 font-bold hover:underline">
+      <Link href={'/signup'} className="mt-12 text-sm font-bold hover:underline">
         회원가입 &gt;
       </Link>
     </section>

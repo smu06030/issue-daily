@@ -30,11 +30,4 @@ export const getIsLogin = async () => {
   return !!session;
 };
 
-export const getUserId = async () => {
-  const serverClient = createClient();
-  const {
-    data: { user }
-  } = await serverClient.auth.getUser();
 
-  return user;
-};
