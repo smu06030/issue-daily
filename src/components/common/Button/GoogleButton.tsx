@@ -10,7 +10,7 @@ const GoogleButton = () => {
       options: {
         queryParams: {
           access_type: 'offline',
-          prompt: 'consent',
+          prompt: 'consent'
         },
         redirectTo: window.origin + '/auth/callback'
       }
@@ -21,7 +21,7 @@ const GoogleButton = () => {
     <button
       type="button"
       onClick={signInWithGoogle}
-      className="flex justify-center gap-4 items-center w-[348px] h-[50px] mt-3 shadow-buttonShadow rounded-md text-black font-bold hover:bg-slate-50"
+      className="mt-3 flex h-[50px] w-[348px] items-center justify-center gap-4 rounded-md font-bold text-black shadow-buttonShadow hover:bg-slate-50"
     >
       <Image src="/google.png" alt="구글" width={24} height={24} />
       <span>구글 로그인</span>
