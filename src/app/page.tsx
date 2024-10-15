@@ -7,5 +7,6 @@ const MainPage = async () => {
       <TopNewsList />
       <CategoryNewsList />
     </>
-)}
+  );
+};
 export default MainPage;
