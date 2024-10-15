@@ -17,15 +17,24 @@ const UpdatePasswordForm = () => {
   });
 
   const onSubmit = async (userInfo: FieldValues) => {
-    await browserClient.auth.updateUser({ password: userInfo.password });
-    await fetch('/api/logout', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    alert('비밀번호를 변경했습니다. 다시 로그인 하세요.');
-    router.push('/login');
+    try {
+      // 비동기 작업을 병렬로 처리
+      await Promise.all([
+        browserClient.auth.updateUser({ password: userInfo.password }),
+        fetch('/api/logout', {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+      ]);
+
+      alert('비밀번호를 변경했습니다. 다시 로그인 하세요.');
+      router.push('/login');
+    } catch (error) {
+      console.error('비밀번호 변경 중 오류 발생:', error);
+      alert('오류가 발생했습니다. 다시 시도해 주세요.');
+    }
   };
 
   return (
