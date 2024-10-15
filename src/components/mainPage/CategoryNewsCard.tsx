@@ -6,16 +6,16 @@ import LikeButton from '../likes/LikeButton';
 
 const CategoryNewsCard = ({ el }: { el: NewsResultsType }) => {
   return (
-    <div className="font-pretendard border-2 border-solid border-black w-[23%] h-[300px] relative">
+    <div className="relative h-[300px] w-[23%] border-2 border-solid border-black font-pretendard">
       <Link href={'/'} onClick={(e) => e.preventDefault()}>
-        <div className="h-[70%] flex justify-center">
+        <div className="flex h-[70%] justify-center">
           <Image
             src={el.image_url === null ? newsImg : el.image_url}
             alt={el.source_id}
             width={100}
             height={100}
             unoptimized
-            className="w-auto h-full"
+            className="h-full w-auto"
           />
         </div>
         <div className="h-[30%]">
