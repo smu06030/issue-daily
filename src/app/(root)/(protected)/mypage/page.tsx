@@ -1,11 +1,10 @@
 'use client';
-import Likes from '../../../../components/mypage/Likes';
-import Profile from '@/components/mypage/Profile';
-import Comments from '@/components/mypage/Comment';
 import { useEffect, useState } from 'react';
 import { FaComments, FaStar } from 'react-icons/fa';
 import { fetchUsers } from '@/serverActions/profileActions';
-import { Metadata } from 'next';
+import Likes from '../../../../components/mypage/Likes';
+import Profile from '@/components/mypage/Profile';
+import Comments from '@/components/mypage/Comment';
 
 const Mypage = () => {
   const [userId, setUserId] = useState<string | null>(null);

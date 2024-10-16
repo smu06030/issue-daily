@@ -1,9 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
-import { getLikesByUserId } from '@/serverActions/profileActions';
-import Link from 'next/link';
 import { NewsResultsType } from '@/types/newsInfo';
+import { getLikesByUserId } from '@/serverActions/profileActions';
+import Card from './Card';
+import Link from 'next/link';
+
 const url = 'http://localhost:3000';
 type Props = {
   userId: string | null;
