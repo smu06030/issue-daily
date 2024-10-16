@@ -29,7 +29,7 @@ const Likes = ({ userId }: Props) => {
 
   console.log('userId', userId);
   console.log('likes', likes);
-  3;
+
   return (
     <div className="flex-j-center flex-wrap gap-8">
       {likes.length === 0 ? (
