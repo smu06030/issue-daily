@@ -46,6 +46,9 @@ body {
 .flex-i-center {
   @apply flex items-center;
 }
+.flex-j-i-center {
+  @apply flex items-center justify-center;
+}
 .flex-i-text-center {
   @apply flex items-center text-center;
 }
