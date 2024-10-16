@@ -4,8 +4,10 @@ import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import InputField from '../../../components/common/InputFeild/InputField';
 import { useRouter } from 'next/navigation';
+import { useUserStore } from '@/providers/userStoreProvider';
 
 const LoginPage = () => {
+  const { userLogin } = useUserStore((state) => state);
   const router = useRouter();
   const {
     register,
@@ -31,7 +33,7 @@ const LoginPage = () => {
       alert('아이디와 비밀번호를 다시 입력해주세요.');
       return;
     }
-
+    userLogin();
     router.push('/');
   };
 
