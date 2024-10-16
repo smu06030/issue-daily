@@ -1,11 +1,12 @@
-import React from "react";
+import CategoryNewsList from '@/components/mainPage/CategoryNewsList';
+import TopNewsList from '@/components/mainPage/TopNewsList';
 
-export default function Home() {
+const MainPage = async () => {
   return (
-    <div className="font-pretendard">
-      <div className="font-thin">dsfsdf</div>
-      <div className="font-bold">dsfsdf</div>
-      <div className="font-medium">dsfsdf</div>
-    </div>
+    <>
+      <TopNewsList />
+      <CategoryNewsList />
+    </>
   );
-}
+};
+export default MainPage;
