@@ -37,8 +37,8 @@ const TopNewsList = () => {
 
   return (
     <div className="font-pretendard">
-      <p className="text-[40px] m-5 font-black">Top News</p>
-      <div className="embla overflow-hidden h-[400px] w-[80%] mx-auto mb-3">
+      <p className="m-5 text-[40px] font-black">Top News</p>
+      <div className="embla mx-auto mb-3 h-[400px] w-[80%] overflow-hidden">
         <div className="embla__viewport h-full w-full" ref={emblaRef}>
           <div className="embla__container flex h-full">
             {topNews.slice(0, 3).map((post) => {
