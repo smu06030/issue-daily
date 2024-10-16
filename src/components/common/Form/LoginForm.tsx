@@ -4,8 +4,11 @@ import { useRouter } from 'next/navigation';
 import InputField from '../InputFeild/InputField';
 import { FieldValues, useForm } from 'react-hook-form';
 import { login } from '@/app/api/auth';
+import { useUserStore } from '@/providers/userStoreProvider';
 
 const LoginForm = () => {
+  const { userLogin } = useUserStore((state) => state);
+
   const router = useRouter();
   const {
     register,
@@ -22,7 +25,7 @@ const LoginForm = () => {
       alert('아이디와 비밀번호를 다시 입력해주세요.');
       return;
     }
-
+    userLogin();
     router.push('/');
   };
   return (
