@@ -6,14 +6,7 @@ import { useEffect, useState } from 'react';
 import { FaComments, FaStar } from 'react-icons/fa';
 import { fetchUsers } from '@/serverActions/profileActions';
 import { Metadata } from 'next';
-export const metadata: Metadata = {
-  title: 'Issu-Daily - 마이페이지',
-  description: '카테고리별 뉴스를 북마크해보세요!',
-  openGraph: {
-    title: 'Issu-Daily - 마이페이지',
-    description: '카테고리별 뉴스를 북마크해보세요!'
-  }
-};
+
 const Mypage = () => {
   const [userId, setUserId] = useState<string | null>(null);
   // 사용자 ID를 불러오는 함수
