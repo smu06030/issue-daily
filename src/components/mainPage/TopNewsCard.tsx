@@ -1,7 +1,7 @@
 import { NewsResultsType } from '@/types/newsInfo';
 import Image from 'next/image';
 import Link from 'next/link';
-import newsImg from '../../../public/news_image.jpg';
+import newsImg from '@/public/news_image.jpg';
 
 const TopNewsCard = ({ post }: { post: NewsResultsType }) => {
   return (
@@ -17,6 +17,7 @@ const TopNewsCard = ({ post }: { post: NewsResultsType }) => {
           height={200}
           unoptimized
           className="h-full w-full"
+          priority={true}
         />
       </div>
       <div className="mx-5 w-[50%]">

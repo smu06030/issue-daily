@@ -6,6 +6,7 @@ import { UserStoreProvider } from '@/providers/userStoreProvider';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { createClient } from '@/utils/supabase/server';
+
 const pretendard = localFont({
   src: './fonts/PretendardVariable.woff2',
   variable: '--font-pretendard',
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: 'issue-daily',
   description: '뉴스 정보를 보여주는 사이트 입니다.'
 };
+
 export default async function RootLayout({
   children
 }: Readonly<{

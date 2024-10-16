@@ -17,7 +17,6 @@ export type ParamProps = {
 const DetailPage = async ({ params }: ParamProps) => {
   const { results } = await getCategoryData(params.category);
   const prevArticle = results.find((article) => article.article_id === params.id);
-  console.log(prevArticle);
 
   return (
     <div className="relative mx-auto max-w-[1000px]">

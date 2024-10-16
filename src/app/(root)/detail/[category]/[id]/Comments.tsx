@@ -8,7 +8,7 @@ import { ParamProps } from './page';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchUsers, getProfileByUserId } from '@/serverActions/profileActions';
 import Image from 'next/image';
-import DefaultProfile from '../../../../../public/images/default_profile.jpeg';
+import DefaultProfile from '@/public/images/default_profile.jpeg';
 
 type CommentsProps = ParamProps & {
   prevArticle:
@@ -37,7 +37,7 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
       const userid = await fetchUsers();
       const userprofile = await getProfileByUserId(userid);
       setUserId(userid);
-      console.log(userprofile);
+
       if (userprofile) {
         setUserProfile({
           avatar_url: userprofile[0].avatar_url,
