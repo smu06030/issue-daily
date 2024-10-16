@@ -29,7 +29,7 @@ export const updateSession = async (request: NextRequest) => {
     );
 
     const { data } = await supabase.auth.getUser();
-  
+
     // 로그인 한 상태라면 메인페이지로 리다이렉트
     if (
       data?.user &&

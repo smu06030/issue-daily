@@ -21,6 +21,8 @@ const Card = ({ likes }: CardProps) => {
         <Image
           src={likes?.image_url || default_img}
           alt="기본 게시물 이미지"
+          width={200}
+          height={200}
           className="w-[100%] object-cover"
           sizes="(max-width: 300px) 100vw, (max-width: 600px) 50vw, 300px"
           unoptimized
