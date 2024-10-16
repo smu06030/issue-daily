@@ -29,7 +29,7 @@ const Likes = ({ userId }: Props) => {
 
   console.log('userId', userId);
   console.log('likes', likes);
-  3;
+
   return (
     <div className="flex-j-center flex-wrap gap-8">
       {likes.length === 0 ? (
@@ -42,8 +42,8 @@ const Likes = ({ userId }: Props) => {
         </div>
       ) : (
         likes.map((item) => (
-          <div className="relative">
-            <Link key={item.article_id} href={`${url}/detail/${item.article_id}`}>
+          <div className="relative" key={item.article_id}>
+            <Link href={`${url}/detail/${item.article_id}`}>
               <Card likes={item} />
             </Link>
           </div>
