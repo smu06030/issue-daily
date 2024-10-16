@@ -12,8 +12,11 @@ export const middleware = async (request: NextRequest) => {
     return NextResponse.redirect(new URL('/', request.url));
   }
 
-  // 로그인을 하지 않았는데 마이페이지에 접근한다면 로그인 페이지로 리다이렉트
-  if (!data?.user && request.nextUrl.pathname.startsWith('/mypage')) {
+  // 로그인을 하지 않았는데 접근한다면 로그인 페이지로 리다이렉트
+  if (
+    !data?.user &&
+    (request.nextUrl.pathname.startsWith('/mypage') || request.nextUrl.pathname.startsWith('/update-password'))
+  ) {
     return NextResponse.redirect(new URL('/login', request.url));
   }
 

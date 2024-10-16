@@ -53,9 +53,9 @@ const CategoryNewsList = () => {
   };
 
   return (
-    <div className="font-pretendard m-5">
+    <div className="m-5 font-pretendard">
       <p className="text-[40px] font-black">News List</p>
-      <div className="flex gap-10 mb-5">
+      <div className="mb-5 flex gap-10">
         {categoryArr.map((el, index) => {
           return (
             <div key={index} className="text-[20px]">
@@ -69,7 +69,7 @@ const CategoryNewsList = () => {
           return <CategoryNewsCard key={el.article_id} el={el} />;
         })}
       </div>
-      <div className="flex gap-5 justify-center mt-5">
+      <div className="mt-5 flex justify-center gap-5">
         {Array(3)
           .fill(1)
           .map((el, index) => {

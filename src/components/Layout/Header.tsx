@@ -26,15 +26,16 @@ const Header = () => {
   };
 
   return (
-    <div className="flex h-12 items-center justify-between font-pretendard shadow-md">
-      <div className="ml-5 text-xl font-bold">
+    <div className="fixed z-20 flex h-12 w-[100%] items-center justify-between bg-white px-5 shadow-md">
+      <div className="font-pretendard text-xl font-bold">
         <Link href={'/'}>
           <p>Issue Daily</p>
         </Link>
       </div>
-      <div className="mr-5">
+
+      <div>
         {isUser ? (
-          <div className="flex gap-5">
+          <div className="flex gap-6">
             <Link href="/mypage">
               <p>마이페이지</p>
             </Link>

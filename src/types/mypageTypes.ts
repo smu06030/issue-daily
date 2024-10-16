@@ -1,15 +1,7 @@
-// likes 타입
-export type LikesInfo = {
-  user_id: string;
-  article_id: string;
-  isLiked: boolean;
-  created_at: string;
-  image_url: string;
-  source_name: string;
-  pubDate: string;
-};
+import { NewsResultsType } from './newsInfo';
+// 즐겨찾기 타입
 export type CardProps = {
-  likes: LikesInfo | null;
+  likes: NewsResultsType | null;
 };
 
 // UserProfile 타입 정의
@@ -26,14 +18,4 @@ export interface ModalProps {
   onClose: () => void; // 모달 닫기 함수
   userProfile: UserProfile | null; // 사용자 프로필 (null일 수 있음)
   userId: string | null;
-}
-
-export interface CommentsInfo {
-  user_id: string;
-  article_id: string;
-  isLiked: boolean;
-  created_at: string;
-  image_url: string;
-  source_name: string;
-  pubDate: string;
 }
