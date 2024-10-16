@@ -8,9 +8,10 @@ import { CommentData } from '@/types/comment';
 type MyCommentsProps = ParamProps & {
   ascending: boolean;
   countMyComments: number | null | undefined;
+  userId: string | null | undefined;
 };
 
-const MyComments = ({ params, ascending, countMyComments }: MyCommentsProps) => {
+const MyComments = ({ params, ascending, countMyComments, userId }: MyCommentsProps) => {
   const queryClient = useQueryClient();
   const [editingId, setEditingId] = useState<number>();
   const [editingMessage, setEditingMessage] = useState<string>();
@@ -20,7 +21,7 @@ const MyComments = ({ params, ascending, countMyComments }: MyCommentsProps) => 
       .from('comments')
       .select('*')
       .eq('article_id', params.id)
-      .eq('user_id', '2cedb3a4-016b-4976-8aea-caa3fa555bd4')
+      .eq('user_id', userId)
       .order('created_at', { ascending: ascending })
       .range(0, 7);
 
@@ -43,11 +44,7 @@ const MyComments = ({ params, ascending, countMyComments }: MyCommentsProps) => 
     await browserClient.from('comments').delete().eq('id', id);
   };
 
-  const {
-    data: myComments,
-    isLoading,
-    isError
-  } = useQuery<CommentData[]>({
+  const { data: myComments, isLoading } = useQuery<CommentData[]>({
     queryKey: ['myComments', params.id, ascending, countMyComments],
     queryFn: getMyComments
   });
@@ -68,10 +65,7 @@ const MyComments = ({ params, ascending, countMyComments }: MyCommentsProps) => 
   });
 
   if (isLoading) {
-    return <div>댓글을 불러오는 중...</div>;
-  }
-  if (isError) {
-    return <div>댓글을 불러오는 중 오류가 발생했습니다.</div>;
+    return <div>로딩중...</div>;
   }
 
   return (

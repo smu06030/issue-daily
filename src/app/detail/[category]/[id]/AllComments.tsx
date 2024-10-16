@@ -6,9 +6,10 @@ import { CommentData } from '@/types/comment';
 
 type MyCommentsProps = ParamProps & {
   ascending: boolean;
+  userId: string | null | undefined;
 };
 
-const AllComment = ({ params, ascending }: MyCommentsProps) => {
+const AllComment = ({ params, ascending, userId }: MyCommentsProps) => {
   const [allComments, setAllComments] = useState<CommentData[]>();
 
   useEffect(() => {
@@ -17,12 +18,11 @@ const AllComment = ({ params, ascending }: MyCommentsProps) => {
         .from('comments')
         .select('*')
         .eq('article_id', params.id)
-        .neq('user_id', '2cedb3a4-016b-4976-8aea-caa3fa555bd4')
+        .neq('user_id', userId)
         .order('created_at', { ascending: ascending });
 
       if (error) {
         console.error(error);
-        return <div>댓글을 불러오는 중 오류가 발생했습니다.</div>;
       } else {
         setAllComments(data);
       }
