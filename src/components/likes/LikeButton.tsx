@@ -17,6 +17,7 @@ const LikeButton = ({ el }: { el: NewsResultsType }) => {
     } else {
       setIsLiked(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isUser]);
 
   // 즐겨찾기 여부 확인
