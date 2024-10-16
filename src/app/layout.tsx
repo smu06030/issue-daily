@@ -30,7 +30,7 @@ export default function RootLayout({
         <UserStoreProvider>
           <Header />
           <Providers>
-            <div className="pt-[50px]">{children}</div>
+            <div className="min-h-screen pt-[50px]">{children}</div>
           </Providers>
           <Footer />
         </UserStoreProvider>

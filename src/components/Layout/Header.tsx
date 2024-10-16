@@ -26,8 +26,8 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed z-20 flex h-12 w-[100%] items-center justify-between bg-white px-5 shadow-md">
-      <div className="font-pretendard text-xl font-bold">
+    <div className="fixed z-20 flex h-12 w-[100%] items-center justify-between bg-white px-5 font-pretendard shadow-md">
+      <div className="text-xl font-bold">
         <Link href={'/'}>
           <p>Issue Daily</p>
         </Link>
