@@ -40,7 +40,7 @@ const Comments = ({ userId }: Props) => {
         </div>
       ) : (
         comments.map((item) => (
-          <Link key={item.article_id} href={`${url}/detail/${item.article_id}`}>
+          <Link key={item.article_id} href={`${url}/detail/${item.category}/${item.article_id}`}>
             <Card likes={item} />
           </Link>
         ))
