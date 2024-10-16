@@ -42,8 +42,8 @@ const Likes = ({ userId }: Props) => {
         </div>
       ) : (
         likes.map((item) => (
-          <div className="relative">
-            <Link key={item.article_id} href={`${url}/detail/${item.article_id}`}>
+          <div key={item.article_id} className="relative">
+            <Link href={`${url}/detail/${item.article_id}`}>
               <Card likes={item} />
             </Link>
           </div>
