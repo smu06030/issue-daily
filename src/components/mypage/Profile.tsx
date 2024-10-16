@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
 import Image from 'next/image';
 import Modal from './Modal';
+import default_img from '@/public/images/default_profile.jpeg';
 
 const Profile = () => {
   const [userId, setUserId] = useState<string | null>(null);
@@ -43,7 +44,7 @@ const Profile = () => {
     <div className="profile flex-j-center mx-auto flex-wrap gap-6 bg-[#f3f3f3] py-10">
       <div>
         <Image
-          src={userProfile?.avatar_url || '/images/default_profile.jpeg'}
+          src={userProfile?.avatar_url || default_img}
           alt="Avatar"
           className="rounded-full object-cover"
           width={150}
