@@ -2,7 +2,7 @@
 
 import { NewsInfoType } from '@/types/newsInfo';
 
-// TopNews List
+// Top3 뉴스 API
 export const getTopNewsData = async (): Promise<NewsInfoType> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_NEWSDATA_URL}/api/1/latest?country=kr&language=ko&category=top&apikey=${process.env.NEXT_PUBLIC_NEWSDATA_API_KEY}`,
@@ -17,7 +17,7 @@ export const getTopNewsData = async (): Promise<NewsInfoType> => {
   return data;
 };
 
-// Category List
+// 카테고리 뉴스 API
 export const getCategoryData = async (category: string): Promise<NewsInfoType> => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_NEWSDATA_URL}/api/1/latest?country=kr&language=ko&category=${category}&apikey=${process.env.NEXT_PUBLIC_NEWSDATA_API_KEY}`,
@@ -32,7 +32,7 @@ export const getCategoryData = async (category: string): Promise<NewsInfoType> =
   return data;
 };
 
-// Next Page News List
+// Next Page 뉴스 API
 export const getNextNewsData = async ({
   category,
   nextPage

@@ -5,6 +5,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import browserClient from '@/utils/supabase/client';
 import Image from 'next/image';
+import defaultProfile_img from '@/public/images/default_profile.jpeg';
 
 // 모달 컴포넌트
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) => {
@@ -63,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) =
         </button>
         <h2>회원정보 수정</h2>
         <Image
-          src={formData.avatar_url || '/images/default_profile.jpeg'}
+          src={formData.avatar_url || defaultProfile_img}
           alt="Avatar"
           className="rounded-full"
           width={100}

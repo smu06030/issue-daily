@@ -3,7 +3,7 @@ import { useUserStore } from '@/providers/userStoreProvider';
 import React from 'react';
 
 const LogoutButton = () => {
-  const { isUser, userLogout } = useUserStore((state) => state);
+  const { userLogout } = useUserStore((state) => state);
   // 로그아웃 버튼 클릭 시
   const onClickLogoutBtn = async () => {
     try {

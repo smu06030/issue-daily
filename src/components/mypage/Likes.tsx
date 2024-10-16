@@ -5,7 +5,6 @@ import { getLikesByUserId } from '@/serverActions/profileActions';
 import Card from './Card';
 import Link from 'next/link';
 
-const url = 'http://localhost:3000';
 type Props = {
   userId: string | null;
 };
@@ -27,9 +26,6 @@ const Likes = ({ userId }: Props) => {
     }
   }, [userId]);
 
-  console.log('userId', userId);
-  console.log('likes', likes);
-
   return (
     <div className="flex-j-center flex-wrap gap-8">
       {likes.length === 0 ? (
@@ -43,7 +39,7 @@ const Likes = ({ userId }: Props) => {
       ) : (
         likes.map((item) => (
           <div key={item.article_id} className="relative">
-            <Link href={`${url}/detail/${item.category}/${item.article_id}`}>
+            <Link href={`/detail/${item.category}/${item.article_id}`}>
               <Card likes={item} />
             </Link>
           </div>

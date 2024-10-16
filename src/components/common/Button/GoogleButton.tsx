@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import browserClient from '@/utils/supabase/client';
+import google_png from '@/public/google.png';
 
 const GoogleButton = () => {
   const signInWithGoogle = async () => {
@@ -23,7 +24,7 @@ const GoogleButton = () => {
       onClick={signInWithGoogle}
       className="mt-3 flex h-[50px] w-[348px] items-center justify-center gap-4 rounded-md font-bold text-black shadow-buttonShadow hover:bg-slate-50"
     >
-      <Image src="/google.png" alt="구글" width={24} height={24} priority />
+      <Image src={google_png} alt="구글" width={24} height={24} priority />
       <span>구글 로그인</span>
     </button>
   );
