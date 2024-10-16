@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Modal from './Modal';
 import { UserProfile } from '@/types/mypageTypes';
 import { fetchUsers, getProfileByUserId } from '@/serverActions/profileActions';
+import { FaEdit } from 'react-icons/fa';
 
 const Profile = () => {
   const [userId, setUserId] = useState<string | null>(null);
@@ -39,26 +40,26 @@ const Profile = () => {
   const userProfile: UserProfile = user ? user[0] : null;
 
   return (
-    <div className="profile flex flex-wrap justify-center gap-6 p-10">
+    <div className="profile flex-j-center mx-auto flex-wrap gap-6 bg-[#f3f3f3] py-10">
       <div>
         <Image
           src={userProfile?.avatar_url || '/images/default_profile.jpeg'}
           alt="Avatar"
           className="rounded-full object-cover"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
         />
       </div>
-      <div className="profileText flex flex-col justify-center text-center sm:text-start">
+      <div className="flex-j-text-center flex-col gap-3 text-xl sm:text-start">
         <p>
           <b>{userProfile ? userProfile.user_name : ''}님</b> 안녕하세요
         </p>
-        <p>개발 관련 게시물을 저장해보세요!</p>
+        <p>관심있는 뉴스를 찾아보세요!</p>
         <button
-          className="border-primary-100 h-[40px] w-[206px] rounded-[10px] border px-4 py-1 font-bold"
+          className="flex-i-center h-[40px] w-[206px] gap-7 rounded-[10px] border border-[#d0d0d0] px-4 py-1 font-bold"
           onClick={() => setIsModalOpen(true)} // 모달 열기
         >
-          내 정보 관리
+          <FaEdit className="text-gray-600" />내 정보 관리
         </button>
       </div>
 

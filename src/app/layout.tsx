@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Providers from './providers';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 const pretendard = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -24,7 +25,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${pretendard.variable} antialiased`}>
         <Header />
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="pt-[50px]">{children}</div>
+        </Providers>
+        <Footer />
       </body>
     </html>
   );

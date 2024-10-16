@@ -5,6 +5,7 @@ import browserClient from '@/utils/supabase/client';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { MdClose } from 'react-icons/md';
 
 // 모달 컴포넌트
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) => {
@@ -56,13 +57,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) =
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={onClose}>
-      <div
-        className="modal-content relative flex w-[400px] flex-col items-center justify-center gap-2 rounded-tl-md rounded-tr-md border bg-white p-[20px] shadow-md"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="modal-container" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button type="button" onClick={onClose} className="absolute right-[20px] top-[10px]">
-          x
+          <MdClose className="text-lg" />
         </button>
         <h2>회원정보 수정</h2>
         <Image
@@ -75,17 +73,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) =
 
         <h2>이메일: {formData.email}</h2>
         <form onSubmit={handleSubmit}>
-          <div className="flex items-center justify-center">
+          <div className="flex-center">
             <label htmlFor="image">프로필 이미지 변경:</label>
             <input
               type="file"
               name="image"
               accept="image/*"
-              className="border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-[60%] rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="input"
               onChange={handleFileChange} // 파일 변경 핸들러 추가
             />
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex-center">
             <label htmlFor="user_name">닉네임:</label>
             <input
               type="text"
@@ -93,13 +91,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) =
               name="user_name" // name 속성 수정
               value={formData.user_name}
               onChange={handleChange}
-              className="border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-[60%] rounded-md border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="input"
             />
           </div>
-          <button
-            type="submit"
-            className="absolute bottom-[-33px] left-[-0.5px] w-[400px] rounded-bl-md rounded-br-md border border-none bg-slate-400 py-1"
-          >
+          <button type="submit" className="modal-submit">
             수정 완료
           </button>
         </form>

@@ -2,28 +2,40 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { getCommentsByUserId } from '@/serverActions/profileActions';
-import { CommentsInfo } from '@/types/mypageTypes';
-
-const Comments = () => {
-  const [comments, setComments] = useState<CommentsInfo[]>([]);
-  const userId = 'caf0d4e1-9b21-4a00-ac49-93573e7637b3';
-
+import Link from 'next/link';
+import { NewsResultsType } from '@/types/newsInfo';
+const url = 'http://localhost:3000';
+type Props = {
+  userId: string | null;
+};
+const Comments = ({ userId }: Props) => {
+  const [comments, setComments] = useState<NewsResultsType[]>([]);
+  const loadComments = async (userId: string) => {
+    const commentsData = await getCommentsByUserId(userId);
+    setComments(commentsData || []);
+  };
   useEffect(() => {
-    const loadComments = async () => {
-      const commentsData = await getCommentsByUserId(userId);
-      setComments(commentsData || []);
-    };
-    loadComments();
-  }, []);
+    if (userId) {
+      loadComments(userId);
+    }
+  }, [userId]);
   return (
-    <div className="flex flex-wrap justify-center gap-8">
-      {comments.map((item) => {
-        return (
-          <div key={item.article_id}>
+    <div className="flex-j-center flex-wrap gap-8">
+      {comments.length === 0 ? (
+        <div className="flex-i-text-center min-h-[100px] flex-col gap-5">
+          <p className="text-lg font-bold">댓글을 작성한 게시물이 없습니다.</p>
+          <p className="text-md font-bold text-slate-500">관심있는 뉴스를 찾아보세요!</p>
+          <Link href={'/'} className="mypage-sub-title">
+            인기 뉴스 확인하기
+          </Link>
+        </div>
+      ) : (
+        comments.map((item) => (
+          <Link key={item.article_id} href={`${url}/detail/${item.article_id}`}>
             <Card likes={item} />
-          </div>
-        );
-      })}
+          </Link>
+        ))
+      )}
     </div>
   );
 };
