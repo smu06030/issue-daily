@@ -85,7 +85,7 @@ const SignUpForm = () => {
       </div>
       <button
         type="submit"
-        className="my-9 h-[50px] w-[348px] rounded-md bg-black font-bold text-white shadow-buttonShadow hover:bg-zinc-800"
+        className="mb-12 mt-9 h-[50px] w-[348px] rounded-md bg-black font-bold text-white shadow-buttonShadow hover:bg-zinc-800"
       >
         회원가입
       </button>
