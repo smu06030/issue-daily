@@ -76,7 +76,8 @@ const LikeButton = ({ el }: { el: NewsResultsType }) => {
         image_url: el.image_url,
         source_name: el.source_name,
         pubDate: el.pubDate,
-        title: el.title
+        title: el.title,
+        category: el.category[0]
       });
 
       if (error) {

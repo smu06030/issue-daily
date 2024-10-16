@@ -5,7 +5,10 @@ import newsImg from '../../../public/news_image.jpg';
 
 const TopNewsCard = ({ post }: { post: NewsResultsType }) => {
   return (
-    <Link href={`/detail/${post.article_id}`} className="embla__slide flex h-full w-full shrink-0 grow-0 basis-full">
+    <Link
+      href={`/detail/${post.category[0]}/${post.article_id}`}
+      className="embla__slide flex h-full w-full shrink-0 grow-0 basis-full"
+    >
       <div className="h-full w-[50%]">
         <Image
           src={post.image_url === null ? newsImg : post.image_url}

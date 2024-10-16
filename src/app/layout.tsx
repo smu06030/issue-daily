@@ -7,6 +7,7 @@ import { UserStoreProvider } from '@/providers/userStoreProvider';
 
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
+import { createClient } from '@/utils/supabase/server';
 
 const pretendard = localFont({
   src: './fonts/PretendardVariable.woff2',
@@ -19,15 +20,17 @@ export const metadata: Metadata = {
   description: '뉴스 정보를 보여주는 사이트 입니다.'
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { data } = await createClient().auth.getUser();
+  const response = data.user;
   return (
     <html lang="en">
       <body className={`${pretendard.variable} antialiased`}>
-        <UserStoreProvider>
+        <UserStoreProvider isUser={!!response}>
           <Header />
           <Providers>
             <div className="min-h-screen pt-[50px]">{children}</div>

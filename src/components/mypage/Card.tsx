@@ -1,7 +1,6 @@
 'use client';
 import { CardProps } from '@/types/mypageTypes';
 import React from 'react';
-import LikeButton from '../likes/LikeButton';
 
 const Card = ({ likes }: CardProps) => {
   // 날짜에서 시간 제거하는 함수
@@ -15,7 +14,7 @@ const Card = ({ likes }: CardProps) => {
     return `${month}월 ${day}일 ${hours}:${minutes}`; // 원하는 형식으로 반환
   };
   return (
-    <div className="shadow-custom relative max-w-[300px] overflow-hidden">
+    <div className="relative max-w-[300px] overflow-hidden shadow-custom">
       <div className="h-[200px] w-[300px] overflow-hidden rounded-lg">
         <img
           src={likes?.image_url || '/images/default_img.jpg'}

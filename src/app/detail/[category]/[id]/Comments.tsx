@@ -37,7 +37,7 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
       const userid = await fetchUsers();
       const userprofile = await getProfileByUserId(userid);
       setUserId(userid);
-      console.log(userprofile);
+
       if (userprofile) {
         setUserProfile({
           avatar_url: userprofile[0].avatar_url,

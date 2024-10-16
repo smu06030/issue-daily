@@ -13,6 +13,7 @@ const CategoryNewsList = () => {
 
   useEffect(() => {
     getCategoryNewsApi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   // 카테고리별 뉴스 데이터 10개씩 불러오기
@@ -62,7 +63,9 @@ const CategoryNewsList = () => {
         {categoryArr.map((el, index) => {
           return (
             <div key={index} className="text-[20px]">
-              <button onClick={() => onClickCategoryBtn(el)}>{el}</button>
+              <button onClick={() => onClickCategoryBtn(el)} className="hover:text-red-400">
+                {el}
+              </button>
             </div>
           );
         })}
@@ -78,7 +81,10 @@ const CategoryNewsList = () => {
           .map((el, index) => {
             return (
               <div key={index + 1}>
-                <button onClick={() => onClickpaginationBtn(index)} className="border-2 border-solid border-black p-2">
+                <button
+                  onClick={() => onClickpaginationBtn(index)}
+                  className="w-11 rounded-[8px] border-2 border-solid border-black p-2"
+                >
                   {el + index}
                 </button>
               </div>
