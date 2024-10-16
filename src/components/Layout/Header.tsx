@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link';
 import { useUserStore } from '@/providers/userStoreProvider';
 import LogoutButton from '../common/Button/LogoutButton';
