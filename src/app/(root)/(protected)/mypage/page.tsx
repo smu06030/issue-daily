@@ -1,10 +1,11 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { FaComments, FaStar } from 'react-icons/fa';
+import { fetchUsers } from '@/serverActions/profileActions';
 import Likes from '../../../../components/mypage/Likes';
 import Profile from '@/components/mypage/Profile';
 import Comments from '@/components/mypage/Comment';
-import { useEffect, useState } from 'react';
-import { fetchUsers } from '@/serverActions/profileActions';
-import { FaComments, FaStar } from 'react-icons/fa';
+
 const Mypage = () => {
   const [userId, setUserId] = useState<string | null>(null);
   // 사용자 ID를 불러오는 함수
@@ -17,7 +18,7 @@ const Mypage = () => {
   }, []);
 
   return (
-    <div className="m-auto max-w-[1200px] pb-12">
+    <div className="m-auto max-w-[1200px] pb-12 font-pretendard">
       <Profile />
       {/*  이후  */}
       <div className="likes border-b-2 border-b-slate-100 pb-[80px]">

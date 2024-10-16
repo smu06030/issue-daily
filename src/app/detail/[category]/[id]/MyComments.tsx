@@ -3,7 +3,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { ParamProps } from './page';
 import Comment from './Comment';
 import browserClient from '@/utils/supabase/client';
-import { CommentData } from '@/types/comment';
+import { CommentData } from '@/types/Comment';
 
 type MyCommentsProps = ParamProps & {
   ascending: boolean;

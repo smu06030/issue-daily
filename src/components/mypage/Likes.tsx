@@ -1,10 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
-import { getLikesByUserId } from '@/serverActions/profileActions';
-
-import Link from 'next/link';
 import { NewsResultsType } from '@/types/newsInfo';
+import { getLikesByUserId } from '@/serverActions/profileActions';
+import Card from './Card';
+import Link from 'next/link';
+
 const url = 'http://localhost:3000';
 type Props = {
   userId: string | null;
@@ -42,8 +42,8 @@ const Likes = ({ userId }: Props) => {
         </div>
       ) : (
         likes.map((item) => (
-          <div className="relative">
-            <Link key={item.article_id} href={`${url}/detail/${item.article_id}`}>
+          <div key={item.article_id} className="relative">
+            <Link href={`${url}/detail/${item.category}/${item.article_id}`}>
               <Card likes={item} />
             </Link>
           </div>

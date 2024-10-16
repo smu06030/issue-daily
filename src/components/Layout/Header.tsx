@@ -1,29 +1,10 @@
 'use client';
-
 import Link from 'next/link';
 import { useUserStore } from '@/providers/userStoreProvider';
+import LogoutButton from '../common/Button/LogoutButton';
 
 const Header = () => {
   const { isUser, userLogout } = useUserStore((state) => state);
-
-  // 로그아웃 버튼 클릭 시
-  const onClickLogoutBtn = async () => {
-    try {
-      const res = await fetch('/api/logout', {
-        method: 'DELETE'
-      });
-
-      if (!res.ok) {
-        throw new Error('로그아웃에 실패했습니다.');
-      }
-
-      userLogout();
-      alert('로그아웃 되었습니다.');
-    } catch (error) {
-      console.error('Error:', error);
-      alert('로그아웃 중 오류가 발생했습니다.');
-    }
-  };
 
   return (
     <div className="fixed z-20 flex h-12 w-[100%] items-center justify-between bg-white px-5 font-pretendard shadow-md">
@@ -39,7 +20,7 @@ const Header = () => {
             <Link href="/mypage">
               <p>마이페이지</p>
             </Link>
-            <button onClick={onClickLogoutBtn}>로그아웃</button>
+            <LogoutButton />
           </div>
         ) : (
           <Link href="/login">

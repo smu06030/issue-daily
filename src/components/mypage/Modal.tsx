@@ -1,11 +1,10 @@
 'use client';
-
 import { ModalProps } from '@/types/mypageTypes';
-import browserClient from '@/utils/supabase/client';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import Image from 'next/image';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { MdClose } from 'react-icons/md';
+import browserClient from '@/utils/supabase/client';
+import Image from 'next/image';
 
 // 모달 컴포넌트
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userProfile, userId }) => {
