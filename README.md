@@ -1,18 +1,18 @@
-# 🕹️ Issue Daily
+# 📰 Issue Daily
+### 💫 최신 이슈들을 한눈에 확인하고 싶다면? Issue Daily를 방문해 주세요 !! 💫<br/>
+<div> ➡️ NEWSDATA.IO API를 이용하여 최근 뉴스들을 카테고리별로 확인할 수 있는 사이트 입니다.</div> <br/>
 
-프로젝트 소개
-
-<br/>
-
-## 🔗 배포 링크
-
-➡️ https://issue-daily.vercel.app/
+#### 🕓 작업 기간 : 24.10.10 ~ 24.10.16
+#### 🔗 배포 링크 : https://issue-daily.vercel.app/
 
 <br/>
 
-## ⌛ 작업 기간
-
-24.10.10 ~ 24.10.16
+### 🔥목표
+- Next.js와 Supabase를 이용한 full stack 개발
+- TypeScript로 더욱 안전하게 개발
+- Zustand를 이용한 상태 관리
+- TanStack Query를 활용한 서버 상태 관리
+- 성능 최적화, 데이터 무결성 유지, 사용자 친화적인 UI/UX 구현
 
 <br/>
 
@@ -130,22 +130,45 @@
 
 <br/>
 
-<div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ 기술 스택 </h2> <br> 
-    <div style="margin: ; text-align: left;" "text-align: left;"> <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">
-          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
-          <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
-          <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
-          <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
-          <br/><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white">
-          <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">
-          <img src="https://img.shields.io/badge/Eslint-4B32C3?style=for-the-badge&logo=Eslint&logoColor=white">
-          </div>
+
+## 🛠️ 기술 스택
+
+#### 와이어프레임
+<div><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"></div>
+
+#### 프레임워크 & 라이브러리
+<div>
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
 </div>
-<div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 블로그 </h2> <br> 
-    <div style="text-align: left;"> <a href=https://velog.io/@hbeom00> <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white&link=https://velog.io/@hbeom00"> </a>
-         <a href=https://velog.io/@hbeom00> <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white&link=https://velog.io/@hbeom00"> </a>
-</div>  <br> 
-<div style="text-align: left;">  </div> 
+
+#### 데이터베이스
+<div><img src="https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white"></div>
+
+#### 품질 관리
+<div>
+<img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">
+<img src="https://img.shields.io/badge/Eslint-4B32C3?style=for-the-badge&logo=Eslint&logoColor=white">
 </div>
+
+#### 버전 관리
+<div>
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
+<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
+</div>
+
+#### 배포 환경
+</div>
+<div><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white">   </div>
+
+
+<br/>
+
+## 🧑‍💻 블로그
+
+| | 유인철 | 이지영 | 선채훈 | 신희범 |
+| :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
+| 역할 | 팀장 | 팀원 | 팀원 | 팀원 |
+| Github | <a href=https://github.com/smu06030> @smu06030 </a> | <a href=https://github.com/wldud7788> @wldud7788 </a> | <a href=https://github.com/slppills> @slppills </a> | <a href=https://github.com/HBeom00> @Hbeom00 </a> |
+| Blog | <a href=https://mingos-habitat.tistory.com/> <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white&link=https://mingos-habitat.tistory.com/"> </a> | <a href=https://velog.io/@rooftop7788> <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white&link=https://velog.io/@rooftop7788"> </a> | <a href=https://velog.io/@slppills> <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white&link=https://velog.io/@slppills"> </a> | <a href=https://velog.io/@hbeom00> <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white&link=https://velog.io/@hbeom00"> </a> |
