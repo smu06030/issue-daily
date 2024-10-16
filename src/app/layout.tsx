@@ -3,8 +3,8 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Providers from './providers';
 import { UserStoreProvider } from '@/providers/userStoreProvider';
-import Footer from '@/components/Layout/Footer';
-import Header from '@/components/Layout/Header';
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 import { createClient } from '@/utils/supabase/server';
 
 const pretendard = localFont({
