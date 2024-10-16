@@ -19,7 +19,7 @@ const LoginPage = () => {
       </Link>
       <GoogleButton />
       <KakaoButton />
-      <Link href={'/signup'} className="mt-12 text-sm font-bold hover:underline">
+      <Link href={'/signup'} className="mb-12 mt-12 text-sm font-bold hover:underline">
         회원가입 &gt;
       </Link>
     </AuthLayout>
