@@ -1,7 +1,7 @@
 import { NewsResultsType } from '@/types/newsInfo';
 import Image from 'next/image';
 import Link from 'next/link';
-import newsImg from '../../../public/news_image.jpg';
+import newsImg from '@/public/news_image.jpg';
 import LikeButton from '../likes/LikeButton';
 
 const CategoryNewsCard = ({ el }: { el: NewsResultsType }) => {

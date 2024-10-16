@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Providers from './providers';
-
 import { UserStoreProvider } from '@/providers/userStoreProvider';
-
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { createClient } from '@/utils/supabase/server';
@@ -14,7 +12,6 @@ const pretendard = localFont({
   variable: '--font-pretendard',
   display: 'swap'
 });
-
 export const metadata: Metadata = {
   title: 'issue-daily',
   description: '뉴스 정보를 보여주는 사이트 입니다.'
@@ -25,12 +22,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { data } = await createClient().auth.getUser();
-  const response = data.user;
+  const {
+    data: { user }
+  } = await createClient().auth.getUser();
   return (
     <html lang="en">
       <body className={`${pretendard.variable} antialiased`}>
-        <UserStoreProvider isUser={!!response}>
+        <UserStoreProvider isUser={!!user}>
           <Header />
           <Providers>
             <div className="min-h-screen pt-[50px]">{children}</div>

@@ -1,24 +1,34 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
 import { getCommentsByUserId } from '@/serverActions/profileActions';
-import Link from 'next/link';
 import { NewsResultsType } from '@/types/newsInfo';
+import Card from './Card';
+import Link from 'next/link';
+
 const url = 'http://localhost:3000';
+
 type Props = {
   userId: string | null;
 };
+
 const Comments = ({ userId }: Props) => {
   const [comments, setComments] = useState<NewsResultsType[]>([]);
+
   const loadComments = async (userId: string) => {
     const commentsData = await getCommentsByUserId(userId);
-    setComments(commentsData || []);
+
+    // 중복된 article_id 제거
+    const uniqueComments = Array.from(new Map(commentsData?.map((item) => [item.article_id, item])).values());
+
+    setComments(uniqueComments);
   };
+
   useEffect(() => {
     if (userId) {
       loadComments(userId);
     }
   }, [userId]);
+
   return (
     <div className="flex-j-center flex-wrap gap-8">
       {comments.length === 0 ? (
@@ -31,7 +41,7 @@ const Comments = ({ userId }: Props) => {
         </div>
       ) : (
         comments.map((item) => (
-          <Link key={item.article_id} href={`${url}/detail/${item.article_id}`}>
+          <Link key={item.article_id} href={`${url}/detail/${item.category}/${item.article_id}`}>
             <Card likes={item} />
           </Link>
         ))

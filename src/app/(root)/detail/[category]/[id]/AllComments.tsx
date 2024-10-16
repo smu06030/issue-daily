@@ -28,6 +28,7 @@ const AllComment = ({ params, ascending, userId }: MyCommentsProps) => {
       }
     };
     getAllComments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ascending, params.id]);
 
   return (

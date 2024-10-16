@@ -8,7 +8,7 @@ import { ParamProps } from './page';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchUsers, getProfileByUserId } from '@/serverActions/profileActions';
 import Image from 'next/image';
-import DefaultProfile from '../../../../../public/images/default_profile.jpeg';
+import DefaultProfile from '@/public/images/default_profile.jpeg';
 
 type CommentsProps = ParamProps & {
   prevArticle:
@@ -74,7 +74,8 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
             image_url: prevArticle?.image_url,
             title: prevArticle?.title,
             avatar_url: userProfile.avatar_url,
-            user_name: userProfile.user_name
+            user_name: userProfile.user_name,
+            category: params.category
           }
         ]);
         setComment('');
@@ -86,7 +87,7 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
 
   const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && comment.length > 0) {
-      onAddComment();
+      mutate();
     }
   };
 
