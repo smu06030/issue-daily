@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import DefaultProfile from '../../../../../public/images/default_profile.jpeg';
-import { CommentData } from '@/types/Comment';
+import { CommentData } from '@/types/comment';
 
 type CommentProps = {
   comment: CommentData;
