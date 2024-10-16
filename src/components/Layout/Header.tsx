@@ -5,16 +5,16 @@ const Header = async () => {
   const isLogin: boolean = await getIsLogin();
 
   return (
-    <div className="flex justify-between items-center h-12 shadow-md">
-      <div className="ml-5 font-pretendard font-bold text-xl">
-        <p>Issue Daily</p>
+    <div className="fixed z-20 flex h-12 w-[100%] items-center justify-between bg-white px-5 shadow-md">
+      <div className="font-pretendard text-xl font-bold">
+        <Link href={'/'}>
+          <p>Issue Daily</p>
+        </Link>
       </div>
-      <div className="mr-5">
+      <div>
         {isLogin ? (
-          <div>
-            <Link href={'/mypage'}>
-              <p>마이페이지</p>
-            </Link>
+          <div className="flex gap-6">
+            <Link href={'/mypage'}>마이페이지</Link>
             <Link href={'/'}>로그아웃</Link>
           </div>
         ) : (

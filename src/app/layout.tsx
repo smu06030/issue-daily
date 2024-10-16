@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${pretendard.variable} antialiased`}>
         <Header />
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="pt-[50px]">{children}</div>
+        </Providers>
       </body>
     </html>
   );
