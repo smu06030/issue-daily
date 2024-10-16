@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={`${pretendard.variable} antialiased`}>
         <Header />
         <Providers>
-          <div className="pt-[50px]">{children}</div>
+          <div className="min-h-screen pt-[50px]">{children}</div>
         </Providers>
         <Footer />
       </body>
