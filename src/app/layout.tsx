@@ -12,6 +12,7 @@ const pretendard = localFont({
   variable: '--font-pretendard',
   display: 'swap'
 });
+
 export const metadata: Metadata = {
   title: 'issue-daily',
   description: '뉴스 정보를 보여주는 사이트 입니다.'
