@@ -1,11 +1,11 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import Modal from './Modal';
 import { UserProfile } from '@/types/mypageTypes';
 import { fetchUsers, getProfileByUserId } from '@/serverActions/profileActions';
+import React, { useEffect, useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
+import Image from 'next/image';
+import Modal from './Modal';
 
 const Profile = () => {
   const [userId, setUserId] = useState<string | null>(null);
@@ -57,7 +57,7 @@ const Profile = () => {
         <p>관심있는 뉴스를 찾아보세요!</p>
         <button
           className="flex-i-center h-[40px] w-[206px] gap-7 rounded-[10px] border border-[#d0d0d0] px-4 py-1 font-bold"
-          onClick={() => setIsModalOpen(true)} // 모달 열기
+          onClick={() => setIsModalOpen(true)}
         >
           <FaEdit className="text-gray-600" />내 정보 관리
         </button>
