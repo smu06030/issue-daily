@@ -14,6 +14,7 @@ const TopNewsCard = ({ post }: { post: NewsResultsType }) => {
           height={200}
           unoptimized
           className="h-full w-full"
+          priority={true}
         />
       </div>
       <div className="mx-5 w-[50%]">

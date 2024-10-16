@@ -6,7 +6,7 @@ import LikeButton from '../likes/LikeButton';
 
 const CategoryNewsCard = ({ el }: { el: NewsResultsType }) => {
   return (
-    <div className="relative h-[300px] w-[23%] border-2 border-solid border-black font-pretendard">
+    <div className="relative h-[300px] w-[23%] rounded-[8px] border-2 border-solid border-black font-pretendard">
       <Link href={`/detail/${el.article_id}`}>
         <div className="flex h-[70%] justify-center">
           <Image

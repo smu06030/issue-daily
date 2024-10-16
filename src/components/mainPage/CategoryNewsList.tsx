@@ -15,6 +15,7 @@ const CategoryNewsList = () => {
     getCategoryNewsApi();
   }, [category]);
 
+  // 카테고리별 뉴스 데이터 10개씩 불러오기
   const getCategoryNewsApi = async () => {
     const res = await getCategoryData(category);
     if (!nextPage.includes(res.nextPage)) {
@@ -24,6 +25,7 @@ const CategoryNewsList = () => {
     setCategoryNews(data);
   };
 
+  // 카테고리 클릭 시
   const onClickCategoryBtn = (categoryName: string) => {
     if (category === categoryName) {
       return;
@@ -32,6 +34,7 @@ const CategoryNewsList = () => {
     setNextPage([]);
   };
 
+  // 페이지 번호 클릭 시
   const onClickpaginationBtn = async (index: number) => {
     if (index === 0) {
       getCategoryNewsApi();
