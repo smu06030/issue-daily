@@ -4,6 +4,6 @@ export type CommentData = {
   article_id: string;
   user_id: string;
   message: string;
-  nextPage: number | undefined;
-  count: number;
+  avatar_url: string;
+  user_name: string;
 };

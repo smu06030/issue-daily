@@ -5,9 +5,10 @@ import newsImg from '../../../public/news_image.jpg';
 import LikeButton from '../likes/LikeButton';
 
 const CategoryNewsCard = ({ el }: { el: NewsResultsType }) => {
+  console.log(el);
   return (
     <div className="relative h-[300px] w-[23%] border-2 border-solid border-black font-pretendard">
-      <Link href={`/detail/${el.article_id}`}>
+      <Link href={`/detail/${el.category[0]}/${el.article_id}`}>
         <div className="flex h-[70%] justify-center">
           <Image
             src={el.image_url === null ? newsImg : el.image_url}
