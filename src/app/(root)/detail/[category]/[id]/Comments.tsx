@@ -4,11 +4,12 @@ import React, { useEffect, useState } from 'react';
 import browserClient from '@/utils/supabase/client';
 import AllComments from './AllComments';
 import MyComments from './MyComments';
-import { ParamProps } from './page';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchUsers, getProfileByUserId } from '@/serverActions/profileActions';
 import Image from 'next/image';
 import DefaultProfile from '@/public/images/default_profile.jpeg';
+import { ParamProps } from '@/types/comment';
+import { countComment } from '@/serverActions/commentsActions';
 
 type CommentsProps = ParamProps & {
   prevArticle:
@@ -25,7 +26,6 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
   const queryClient = useQueryClient();
   const [ascending, setAscending] = useState<boolean>(false);
   const [comment, setComment] = useState('');
-  const [countMyComments, setCountMyComments] = useState<number | null>();
   const [userId, setUserId] = useState<string | null>();
   const [userProfile, setUserProfile] = useState({
     avatar_url: '',
@@ -37,7 +37,6 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
       const userid = await fetchUsers();
       const userprofile = await getProfileByUserId(userid);
       setUserId(userid);
-
       if (userprofile) {
         setUserProfile({
           avatar_url: userprofile[0].avatar_url,
@@ -45,21 +44,9 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
         });
       }
     };
+
     fetchUser();
   }, []);
-
-  const countComment = async () => {
-    const { count, error } = await browserClient
-      .from('comments')
-      .select('*', { count: 'exact', head: true })
-      .eq('article_id', params.id);
-    if (error) {
-      console.error('Error:', error);
-    } else {
-      setCountMyComments(count);
-      return count;
-    }
-  };
 
   const onAddComment = async () => {
     if (comment.length > 0) {
@@ -97,7 +84,7 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
     isError: isCountError
   } = useQuery({
     queryKey: ['countComments', params.id],
-    queryFn: countComment
+    queryFn: () => countComment({ params })
   });
 
   const { mutate } = useMutation({
@@ -125,7 +112,7 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
       </div>
 
       <div className="mt-5 flex gap-5">
-        {userProfile ? (
+        {userId ? (
           <>
             {userProfile.avatar_url ? (
               <Image src={userProfile.avatar_url} alt="" width={50} height={50} className="rounded-full" unoptimized />
@@ -166,7 +153,7 @@ const Comments = ({ params, prevArticle }: CommentsProps) => {
       </div>
 
       <div className="mt-20">
-        <MyComments userId={userId} ascending={ascending} params={params} countMyComments={countMyComments} />
+        <MyComments userId={userId} ascending={ascending} params={params} countMyComments={count} />
         <AllComments userId={userId} ascending={ascending} params={params} />
       </div>
     </div>

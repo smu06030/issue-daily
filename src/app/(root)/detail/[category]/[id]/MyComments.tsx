@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { ParamProps } from './page';
 import Comment from './Comment';
 import browserClient from '@/utils/supabase/client';
-import { CommentData } from '@/types/comment';
+import { CommentData, ParamProps } from '@/types/comment';
+import { getMyComments } from '@/serverActions/commentsActions';
 
 type MyCommentsProps = ParamProps & {
   ascending: boolean;
@@ -15,21 +15,6 @@ const MyComments = ({ params, ascending, countMyComments, userId }: MyCommentsPr
   const queryClient = useQueryClient();
   const [editingId, setEditingId] = useState<number>();
   const [editingMessage, setEditingMessage] = useState<string>();
-
-  const getMyComments = async () => {
-    const { data, error } = await browserClient
-      .from('comments')
-      .select('*')
-      .eq('article_id', params.id)
-      .eq('user_id', userId)
-      .order('created_at', { ascending: ascending })
-      .range(0, 7);
-
-    if (error) {
-      throw error;
-    }
-    return data;
-  };
 
   const updateComments = async (id: number) => {
     await browserClient
@@ -44,10 +29,19 @@ const MyComments = ({ params, ascending, countMyComments, userId }: MyCommentsPr
     await browserClient.from('comments').delete().eq('id', id);
   };
 
-  const { data: myComments, isLoading } = useQuery<CommentData[]>({
+  const {
+    data: myComments,
+    isLoading,
+    refetch
+  } = useQuery<CommentData[]>({
     queryKey: ['myComments', params.id, ascending, countMyComments],
-    queryFn: getMyComments
+    queryFn: () => getMyComments({ params, userId, ascending }),
+    enabled: !!userId
   });
+
+  useEffect(() => {
+    refetch();
+  }, [countMyComments]);
 
   const updateMutation = useMutation({
     mutationFn: updateComments,
@@ -64,7 +58,7 @@ const MyComments = ({ params, ascending, countMyComments, userId }: MyCommentsPr
     }
   });
 
-  if (isLoading) {
+  if (isLoading && !!userId) {
     return <div>로딩중...</div>;
   }
 
