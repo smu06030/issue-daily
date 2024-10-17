@@ -32,7 +32,7 @@ const Comments = ({ userId }: Props) => {
   return (
     <div className="flex-j-center flex-wrap gap-8">
       {comments.length === 0 ? (
-        <div className="flex-i-text-center min-h-[100px] flex-col gap-5">
+        <div className="flex-i-text-center min-h-[200px] flex-col gap-5">
           <p className="text-lg font-bold">댓글을 작성한 게시물이 없습니다.</p>
           <p className="text-md font-bold text-slate-500">관심있는 뉴스를 찾아보세요!</p>
           <Link href={'/'} className="mypage-sub-title">
