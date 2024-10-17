@@ -190,6 +190,14 @@
 
 <details>
 <summary>로그인/로그아웃</summary>
+
+<br />
+
+**<supabase auth를 사용해 이메일과 OAuth 기반의 소셜 로그인 기능 구현>**
+- 소셜 로그인(카카오, 구글) 기능 구현
+- 로그인 후 발급된 JWT토큰을 쿠키에 저장해 클라이언트측에서 토큰 기반으로 인증 상태를 확인해 인가된 리소스에 접근 ⭕
+- 로그인, 회원가입 폼을 react-hook-form 라이브러리를 사용해 구성 ⭕
+- register를 이용해 비제어 컴포넌트로 폼을 관리해 실시간 유효성 검사도 진행 ⭕
  
  ![screencapture-localhost-3000-login-2024-10-17-04_04_20](https://github.com/user-attachments/assets/0edda5ac-7c4f-4495-b332-dcfc61c88438)
 
@@ -197,6 +205,14 @@
 
 <details>
 <summary>메인페이지</summary>
+
+<br />
+
+**<Open News API를 사용해 뉴스 리스트를 볼 수 있는 페이지>**
+- 잦은 api 요청으로 ISR 방식으로 구현 ⭕
+- Top3 News를 캐러셀 기능으로 UI/UX 향상 ⭕
+- supabase를 활용하여 즐겨찾기 기능 구현 ⭕
+- 카테고리별 뉴스 데이터를 받아와 사용자가 더 다양한 뉴스를 확인할 수 있도록 구현 ⭕
  
 ![screencapture-localhost-3000-2024-10-17-04_05_28](https://github.com/user-attachments/assets/25563e16-8c2d-4a6a-a8ff-8e60bd4e3ceb)
 
@@ -205,13 +221,28 @@
 <details>
 <summary>마이페이지</summary>
  
+<br />
+
+**<유저의 프로필 확인 및 수정과 즐겨찾기, 댓글 작성한 뉴스 리스트를 확인할 수 있는 페이지>**
+- Supabase를 활용하여 유저 프로필 및 뉴스 데이터 CRUD 구현 ⭕
+- Tanstack Query를 활용하여 서버상태를 효율적으로 관리 ⭕
+- 쿼리 무효화를 사용하여 최신 데이터를 가져올 수 있도록 하여 항상 일관된 데이터를 유지 ⭕
+
 ![screencapture-localhost-3000-mypage-2024-10-17-04_12_41](https://github.com/user-attachments/assets/d7005a9b-ecae-429b-8f54-390498b5141c)
 
 </details>
 
 <details>
 <summary>디테일페이지</summary>
- 
+  
+<br />
+
+**<댓글 기능과 뉴스 데이터의 상세 내용을 확인할 수 있는 페이지>**
+- 댓글 기능 CRUD 구현 ⭕
+- supabase를 활용하여 즐겨찾기 기능 구현 ⭕
+- Tanstack Query를 활용하여 서버상태를 효율적으로 관리 ⭕
+- tanstack query의 invalidateQueries를 활용해서 화면을 새로고침하지 않고 항상 최신 데이터 사용 ⭕
+  
 ![screencapture-localhost-3000-detail-entertainment-daff7c48b7e58c6d11004415016243a7-2024-10-17-04_13_24](https://github.com/user-attachments/assets/340859df-2668-4b55-9b41-11dd78d4c9a1)
 
 </details>
@@ -219,3 +250,16 @@
 <br/>
 
 ## ⚔️ 트러블 슈팅
+- tanstack의 사용법을 next에서 제대로 이해하지 못하고
+활용하려다보니, 많은 오류가 있었지만,
+강의를 다시보며 개념을 익혔고, 부족한 부분은 튜터님들께서 잘 채워주셔서
+잘 해결할 수 있었습니다.
+
+ <br />
+ 
+- Open News API 요금 제한으로 불러올 수 있는 데이터의 양이 한정적이였다.
+이러한 문제점을 해결하고자 API요청할 때 revalidate를 추가하여 데이터가 캐싱되어 이후 데이터를 불러올 때 캐싱된 데이터를 불러올 수 있도록 ISR 방식을 사용하였다.
+
+ <br />
+ 
+- 사용자가 로그인 하면 마이페이지와 로그아웃 버튼이 보여지는데 새로고침 하면 다시 로그인 버튼이 나타나는 이슈.. 해결 방법은!! 로그인한 유저 정보를 supabase의 auth.User()로 불러와서 zustand 전역상태 관리를 활용하여 해결하였다.
