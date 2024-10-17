@@ -5,8 +5,6 @@ import { NewsResultsType } from '@/types/newsInfo';
 import Card from './Card';
 import Link from 'next/link';
 
-const url = 'http://localhost:3000';
-
 type Props = {
   userId: string | null;
 };
@@ -41,7 +39,7 @@ const Comments = ({ userId }: Props) => {
         </div>
       ) : (
         comments.map((item) => (
-          <Link key={item.article_id} href={`${url}/detail/${item.category}/${item.article_id}`}>
+          <Link key={item.article_id} href={`/detail/${item.category}/${item.article_id}`}>
             <Card likes={item} />
           </Link>
         ))
