@@ -1,18 +1,11 @@
 import React from 'react';
-
 import Comments from './Comments';
 import { getCategoryData } from '@/serverActions/newsApi';
 import Link from 'next/link';
 import Image from 'next/image';
 import newsImg from '../../../../../public/news_image.jpg';
 import LikeButton from '@/components/likes/LikeButton';
-
-export type ParamProps = {
-  params: {
-    category: string;
-    id: string;
-  };
-};
+import { ParamProps } from '@/types/comment';
 
 const DetailPage = async ({ params }: ParamProps) => {
   const { results } = await getCategoryData(params.category);

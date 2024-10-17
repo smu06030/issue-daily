@@ -7,3 +7,15 @@ export type CommentData = {
   avatar_url: string;
   user_name: string;
 };
+
+export type ParamProps = {
+  params: {
+    category: string;
+    id: string;
+  };
+};
+
+export type GetMyComments = ParamProps & {
+  userId: string | null | undefined;
+  ascending: boolean;
+};
