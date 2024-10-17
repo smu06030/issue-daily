@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ParamProps } from './page';
 import Comment from './Comment';
-import browserClient from '@/utils/supabase/client';
-import { CommentData } from '@/types/comment';
+import { CommentData, ParamProps } from '@/types/comment';
+import { getAllComments } from '@/serverActions/commentsActions';
 
 type MyCommentsProps = ParamProps & {
   ascending: boolean;
@@ -13,21 +12,13 @@ const AllComment = ({ params, ascending, userId }: MyCommentsProps) => {
   const [allComments, setAllComments] = useState<CommentData[]>();
 
   useEffect(() => {
-    const getAllComments = async () => {
-      const { data, error } = await browserClient
-        .from('comments')
-        .select('*')
-        .eq('article_id', params.id)
-        .neq('user_id', userId)
-        .order('created_at', { ascending: ascending });
-
-      if (error) {
-        console.error(error);
-      } else {
-        setAllComments(data);
-      }
+    const fetchGetAllComments = async () => {
+      const data = await getAllComments({ params, userId, ascending });
+      console.log(data);
+      setAllComments(data);
     };
-    getAllComments();
+
+    fetchGetAllComments();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ascending, params.id]);
 
